@@ -1,3 +1,22 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://car1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://track1.png" type="Texture" id=2]
 
 [node name="track1" type="Node2D"]
+
+[node name="car1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 600, 518.9 )
+rotation = -1.57085
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+visible = false
+z_index = -2
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+rotation = 0.317382
+polygon = PoolVector2Array( 0, 0 )
